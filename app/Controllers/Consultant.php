@@ -8,15 +8,14 @@
 
 namespace App\Controllers;
 
-
 class Consultant extends BaseController
 {
-    public function list()
-    {
-        $data['title'] = "Consultants";
+	public function list()
+	{
+		$data['title'] = 'Consultants';
 
-        echo view('user/header', $data);
-        echo view('consultant/list');
-        echo view('user/footer');
-    }
+		echo view('user/header', $data);
+		echo view('consultant/list');
+		echo view('user/footer');
+	}
 }

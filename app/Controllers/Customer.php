@@ -26,12 +26,12 @@ namespace App\Controllers;
  */
 class Customer extends BaseController
 {
-    public function list()
-    {
-        $data['title'] = "Clients";
+	public function list()
+	{
+		$data['title'] = 'Clients';
 
-        echo view('user/header', $data);
-        echo view('customer/list');
-        echo view('user/footer');
-    }
+		echo view('user/header', $data);
+		echo view('customer/list');
+		echo view('user/footer');
+	}
 }

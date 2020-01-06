@@ -12,22 +12,24 @@ use CodeIgniter\Model;
 
 class UserModel extends Model
 {
+	protected function hashPassword(array $data)
+	{
+		if (! isset($data['motPasse']))
+		{
+			return $data;
+		}
 
-    protected function hashPassword(array $data)
-    {
-        if (! isset($data['motPasse'])) return $data;
+		$data['motPasse'] = password_hash($data['motPasse'], PASSWORD_DEFAULT);
 
-        $data['motPasse'] = password_hash($data['motPasse'], PASSWORD_DEFAULT);
+		return $data;
+	}
 
-        return $data;
-    }
+	public function addUser($data)
+	{
+		$db      = \Config\Database::connect();
+		$builder = $db->table('Utilisateur');
+		$data    = $this->hashPassword($data);
 
-    public function addUser($data)
-    {
-        $db = \Config\Database::connect();
-        $builder = $db->table('Utilisateur');
-        $data = $this->hashPassword($data);
-
-        return $builder->insert($data);
-    }
+		return $builder->insert($data);
+	}
 }
