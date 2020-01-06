@@ -15,7 +15,7 @@
 	<!-- icheck bootstrap -->
 	<link rel="stylesheet" href="<?php base_url() ?>/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
 	<!-- Theme style -->
-	<link rel="stylesheet" href="<?php base_url() ?>/dist/css/adminlte.min.css">
+	<link rel="stylesheet" href="<?php base_url() ?>/assets/css/adminlte.min.css">
 	<!-- Google Font: Source Sans Pro -->
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
@@ -37,7 +37,7 @@ to get the desired effect
 	<nav class="main-header navbar navbar-expand-md navbar-light navbar-white">
 		<div class="container">
 			<a href="<?= base_url('home') ?>" class="navbar-brand">
-				<img src="<?= base_url() ?>/dist/img/AdminLTELogo.png" alt="ABConsulting Logo" class="brand-image img-circle elevation-3"
+				<img src="<?= base_url() ?>/assets/img/AdminLTELogo.png" alt="ABConsulting Logo" class="brand-image img-circle elevation-3"
 					 style="opacity: .8">
 				<span class="brand-text font-weight-light">ABConsulting</span>
 			</a>
