@@ -75,7 +75,7 @@ $routes->setAutoRoute(true);
 $routes->add('/', 'Home::index');
 $routes->add('login/forgot-password', 'User::forgotPassword');
 $routes->add('home', 'User::home');
-$routes->add('user/login', 'User::login');
+$routes->add('login', 'User::login');
 $routes->add('user/create', 'User::createUser');
 
 /**

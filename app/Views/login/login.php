@@ -8,9 +8,11 @@
             <div class="card-body login-card-body">
                 <p class="login-box-msg">Veuillez vous connecter</p>
 
-                <form action="../../index3.html" method="post">
+                <?= view('user/flashdata', $flashMessages); ?>
+
+                <form action="<?= base_url('user/login') ?>" method="post">
                     <div class="input-group mb-3">
-                        <input type="email" class="form-control" placeholder="Email">
+                        <input type="email" class="form-control" name="mail" placeholder="Email">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-envelope"></span>
@@ -18,7 +20,7 @@
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="password" class="form-control" placeholder="Mot de passe">
+                        <input type="password" class="form-control" name="password" placeholder="Mot de passe">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>
