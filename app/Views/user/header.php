@@ -58,12 +58,6 @@ to get the desired effect
 					<li class="nav-item">
 						<a href="<?= base_url('consultant/list') ?>" class="nav-link">Consultants</a>
 					</li>
-                    <!-- Messages Dropdown Menu -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('logout') ?>">
-                            <i class="fas fa-sign-out-alt"></i>
-                        </a>
-                    </li>
 				</ul>
 
 				<!-- SEARCH FORM -->
@@ -77,6 +71,15 @@ to get the desired effect
 						</div>
 					</div>
 				</form>
+
+                <!-- Déconnexion -->
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link " href="<?= base_url('logout') ?>">
+                            <i class="fas fa-sign-out-alt"></i>
+                        </a>
+                    </li>
+                </ul>
 			</div>
 		</div>
 	</nav>
