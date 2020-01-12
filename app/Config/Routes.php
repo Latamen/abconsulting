@@ -74,6 +74,7 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->add('/', 'Home::index');
 $routes->add('login/forgot-password', 'User::forgotPassword');
+$routes->add('logout', 'User::logout');
 $routes->add('home', 'User::home');
 $routes->add('login', 'User::login');
 $routes->add('user/create', 'User::createUser');

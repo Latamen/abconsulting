@@ -13,7 +13,7 @@ use App\Models\UserModel;
 class User extends BaseController
 {
     /**
-     * Page de connexion
+     * Page Formulaire de connexion
      */
     public function login()
     {
@@ -51,6 +51,9 @@ class User extends BaseController
         echo view('login/login', $data);
     }
 
+    /**
+     * Page d'accueil quand user connecté
+     */
     public function home()
     {
         $data['title'] = "Page d'accueil";
@@ -64,7 +67,13 @@ class User extends BaseController
      */
     public function logout()
     {
-            echo view('login/logout');
+        $session = session();
+
+        // suppression du user connecte
+        $session->remove('user');
+
+        // redirection vers la page de connexion
+        return redirect('login');
     }
 
     /**
