@@ -58,6 +58,9 @@ to get the desired effect
 					<li class="nav-item">
 						<a href="<?= base_url('consultant/list') ?>" class="nav-link">Consultants</a>
 					</li>
+                    <li class="nav-item">
+                        <a href="<?= base_url('projects/list') ?>" class="nav-link">Projets</a>
+                    </li>
 				</ul>
 
 				<!-- SEARCH FORM -->
