@@ -16,6 +16,9 @@ class ProjectModel extends Model
     protected $table = 'projet';
     protected $primaryKey = 'idProjet';
     protected $returnType = 'array';
+    protected $allowedFields = [
+        'nom', 'description'
+    ];
     protected $createdField  = 'createdAt';
     protected $updatedField  = 'updatedAt';
 
@@ -42,5 +45,19 @@ class ProjectModel extends Model
             ->join('consultant co', 'co.codeConsultant = p.codeConsultant')
             ->where('p.idProjet', $id)
             ->get()->getResultObject()[0];
+    }
+
+    /**
+     * Édition d'un projet
+     */
+    public function edit($id, $project)
+    {
+        $db      = \Config\Database::connect();
+        $builder = $db->table('projet p');
+
+        return $builder->set('description', $project['description'])
+            ->set('nom', $project['nom'])
+            ->where('idProjet', $id)
+            ->update();
     }
 }

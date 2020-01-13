@@ -82,8 +82,10 @@ $routes->add('login', 'User::login');
 
 /** Routes projets */
 
-$routes->add('projects/list', 'Project::list');
-$routes->add('projects/edit/(:num)', 'Project::edit/$1');
+$routes->add('project/list', 'Project::list');
+$routes->add('project/edit/(:num)', 'Project::edit/$1');
+$routes->add('project/delete/(:num)', 'Project::delete/$1');
+$routes->add('project/add', 'Project::add');
 
 /** Routes users */
 $routes->add('user/create', 'User::createUser');

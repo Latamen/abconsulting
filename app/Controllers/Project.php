@@ -48,6 +48,23 @@ class Project extends BaseController
         $projectModel = new ProjectModel();
         $data['project'] = $projectModel->getProject($idProjet);
 
+        // si on a validé le formulaire d'édition d'un projet
+        if ($this->request->getPost()) {
+            // récupération du modèle Project
+            $projectModel = new ProjectModel();
+
+            // récupération des infos du formulaire
+            $project['idProjet'] = $idProjet;
+            $project['nom'] = $this->request->getPost('nomProjet');
+            $project['description'] = $this->request->getPost('description');
+
+            // méthode update du modele Project
+            $projectModel->edit($idProjet, $project);
+
+            // redirection vers la liste des projets
+            return redirect('project/list');
+        }
+
         echo view('user/header', $data);
         echo view('project/edit', $data);
         echo view('user/footer');

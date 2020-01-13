@@ -27,20 +27,27 @@
                             <h3 class="card-title">Édition du projet</h3>
                         </div>
 
-                        <div class="card-body">
-                            <div class="form-group">
-                                <label for="inputName">Nom</label>
-                                <input type="text" id="inputName" class="form-control" value="<?= $project->nomProjet ?>">
+                        <form action="<?= route_to('project/edit/'.$project->idProjet) ?>" method="post">
+
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label for="inputName">Nom</label>
+                                    <input type="text" id="inputName" name="nomProjet" class="form-control" value="<?= $project->nomProjet ?>">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputDescription">Description</label>
+                                    <textarea id="inputDescription" name="description" class="form-control" rows="4"><?= $project->description ?></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputProjectLeader">Chef de projet</label>
+                                    <input type="text" id="inputProjectLeader" class="form-control" disabled value="<?= $project->nomChefProjet ?>">
+                                </div>s
+                                <div class="form-group text-center">
+                                    <input class="btn btn-primary" type="submit" name="valider" value="Valider">
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label for="inputDescription">Description</label>
-                                <textarea id="inputDescription" class="form-control" rows="4"><?= $project->description ?></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="inputProjectLeader">Chef de projet</label>
-                                <input type="text" id="inputProjectLeader" class="form-control" disabled value="<?= $project->nomChefProjet ?>">
-                            </div>
-                        </div>
+
+                        </form>
                         <!-- /.card-body -->
                     </div>
                     <!-- /.card -->

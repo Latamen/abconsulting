@@ -28,7 +28,7 @@
                                             <td><?= $project->dateDebutProjet ?></td>
                                             <td><?= $project->dateFinProjet ?></td>
                                             <td>
-                                                <a class="nav-link " href="<?= base_url('projects/edit/'.$project->idProjet) ?>">
+                                                <a class="nav-link " href="<?= base_url('project/edit/'.$project->idProjet) ?>">
                                                     <i class="fas fa-edit"></i>
                                                 </a>
                                             </td>
