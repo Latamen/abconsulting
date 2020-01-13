@@ -31,6 +31,9 @@
                                                 <a class="nav-link " href="<?= base_url('project/edit/'.$project->idProjet) ?>">
                                                     <i class="fas fa-edit"></i>
                                                 </a>
+                                                <a class="nav-link " onclick="return confirm('Voulez-vous supprimer ce projet ?')" style="color: red;" href="<?= base_url('project/delete/'.$project->idProjet) ?>">
+                                                    <i class="fas fa-trash"></i>
+                                                </a>
                                             </td>
                                         </tr>
                                     <?php endforeach; ?>

@@ -31,6 +31,7 @@ class ProjectModel extends Model
         p.idProjet as idProjet,
         p.Datedebut as dateDebutProjet, p.Datefin as dateFinProjet')
             ->join('consultant co', 'co.codeConsultant = p.codeConsultant')
+            ->where('p.isActive', 1)
             ->get()->getResultObject();
     }
 
@@ -57,6 +58,16 @@ class ProjectModel extends Model
 
         return $builder->set('description', $project['description'])
             ->set('nom', $project['nom'])
+            ->where('idProjet', $id)
+            ->update();
+    }
+
+    public function disable($id)
+    {
+        $db      = \Config\Database::connect();
+        $builder = $db->table('projet p');
+
+        return $builder->set('isActive', 0)
             ->where('idProjet', $id)
             ->update();
     }

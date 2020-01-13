@@ -41,7 +41,7 @@
                                 <div class="form-group">
                                     <label for="inputProjectLeader">Chef de projet</label>
                                     <input type="text" id="inputProjectLeader" class="form-control" disabled value="<?= $project->nomChefProjet ?>">
-                                </div>s
+                                </div>
                                 <div class="form-group text-center">
                                     <input class="btn btn-primary" type="submit" name="valider" value="Valider">
                                 </div>

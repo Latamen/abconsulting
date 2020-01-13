@@ -73,8 +73,12 @@ class Project extends BaseController
     /**
      * Supprime un projet (le désactive en base pour ne plus l'afficher)
      */
-    public function disable()
+    public function delete($id)
     {
+        // récupération du modèle Project
+        $projectModel = new ProjectModel();
 
+        $projectModel->disable($id);
+        return redirect('project/list');
     }
 }
