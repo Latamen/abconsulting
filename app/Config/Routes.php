@@ -87,6 +87,12 @@ $routes->add('project/edit/(:num)', 'Project::edit/$1');
 $routes->add('project/delete/(:num)', 'Project::delete/$1');
 $routes->add('project/add', 'Project::add');
 
+/** Routes absences */
+
+$routes->add('absence/list', 'Absence::list');
+$routes->add('absence/edit/(:num)', 'Absence::edit/$1');
+$routes->add('absence/add', 'Absence::add');
+
 /** Routes users */
 $routes->add('user/create', 'User::createUser');
 
