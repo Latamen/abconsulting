@@ -87,6 +87,10 @@ $routes->add('project/edit/(:num)', 'Project::edit/$1');
 $routes->add('project/delete/(:num)', 'Project::delete/$1');
 $routes->add('project/add', 'Project::add');
 
+/* Routes contrats */
+$routes->add('contrat/list', 'Contrat::list');
+$routes->add('contrat/view/(:num)', 'Contrat::view/$1');
+
 /** Routes users */
 $routes->add('user/create', 'User::createUser');
 

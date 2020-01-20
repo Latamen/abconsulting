@@ -61,10 +61,13 @@ to get the desired effect
                     <li class="nav-item">
                         <a href="<?= base_url('project/list') ?>" class="nav-link">Projets</a>
                     </li>
+                    <li class="nav-item">
+                        <a href="<?= base_url('contrat/list') ?>" class="nav-link">Contrats</a>
+                    </li>
 				</ul>
 
 				<!-- SEARCH FORM -->
-				<form class="form-inline ml-0 ml-md-3">
+				<!--<form class="form-inline ml-0 ml-md-3">
 					<div class="input-group input-group-sm">
 						<input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
 						<div class="input-group-append">
@@ -73,7 +76,7 @@ to get the desired effect
 							</button>
 						</div>
 					</div>
-				</form>
+				</form>-->
 
                 <!-- Déconnexion -->
                 <ul class="navbar-nav ml-auto">
