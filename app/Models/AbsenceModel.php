@@ -21,7 +21,7 @@ class AbsenceModel extends Model
         return $builder->select('co.nom as nomConsultant, co.prenom as prenomConsultant, a.id_absence as idAbsence,
             a.date_debut as dateDebutAbsence, a.date_fin as dateFinAbsence, a.id_motif_absence as motifAbsence')
             ->join('consultant co', 'co.codeConsultant = a.codeConsultant')
-            ->where('isActive', 1)
+            ->where('a.isActive', 1)
             ->get()->getResultObject();
     }
 
@@ -33,7 +33,7 @@ class AbsenceModel extends Model
         return $builder->select('a.id_absence as idAbsence,
             a.date_debut as dateDebutAbsence, a.date_fin as dateFinAbsence, a.id_motif_absence as motifAbsence')
             ->where('a.id_absence', $id)
-            ->where('isActive', 1)
+            ->where('a.isActive', 1)
             ->get()->getResultObject()[0];
     }
 
