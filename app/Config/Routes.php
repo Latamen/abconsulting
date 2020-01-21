@@ -80,6 +80,14 @@ $routes->add('logout', 'User::logout');
 $routes->add('home', 'User::home');
 $routes->add('login', 'User::login');
 
+/** Routes consultant */
+
+$routes->add('consultant/list', 'Consultant::list');
+$routes->add('consultant/add', 'Consultant::add');
+$routes->add('consultant/edit/(:num)', 'Consultant::edit/$1');
+$routes->add('consultant/delete/(:num)', 'Consultant::delete/$1');
+
+
 /** Routes projets */
 
 $routes->add('project/list', 'Project::list');
