@@ -55,7 +55,7 @@ to get the desired effect
 						<a href="<?= base_url('home') ?>" class="nav-link">Accueil</a>
 					</li>
 					<li class="nav-item">
-						<a href="<?= base_url('customer/list') ?>" class="nav-link">Clients</a>
+						<a href="<?= base_url('client/list') ?>" class="nav-link">Clients</a>
 					</li>
 					<li class="nav-item">
 						<a href="<?= base_url('consultant/list') ?>" class="nav-link">Consultants</a>
