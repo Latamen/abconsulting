@@ -16,6 +16,8 @@
 	<link rel="stylesheet" href="<?php base_url() ?>/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
 	<!-- Theme style -->
 	<link rel="stylesheet" href="<?php base_url() ?>/assets/css/adminlte.min.css">
+    <!-- JQUery UI -->
+    <link rel="stylesheet" href="<?php base_url() ?>/plugins/jquery-ui/jquery-ui.min.css">
 	<!-- Google Font: Source Sans Pro -->
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
@@ -61,10 +63,16 @@ to get the desired effect
                     <li class="nav-item">
                         <a href="<?= base_url('project/list') ?>" class="nav-link">Projets</a>
                     </li>
+                    <li class="nav-item">
+                        <a href="<?= base_url('contrat/list') ?>" class="nav-link">Contrats</a>
+                    </li>
+                    <li>
+                        <a href="<?= base_url('absence/list') ?>" class="nav-link">Absences</a>
+                    </li>
 				</ul>
 
 				<!-- SEARCH FORM -->
-				<form class="form-inline ml-0 ml-md-3">
+				<!--<form class="form-inline ml-0 ml-md-3">
 					<div class="input-group input-group-sm">
 						<input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
 						<div class="input-group-append">
@@ -73,7 +81,7 @@ to get the desired effect
 							</button>
 						</div>
 					</div>
-				</form>
+				</form>-->
 
                 <!-- Déconnexion -->
                 <ul class="navbar-nav ml-auto">
