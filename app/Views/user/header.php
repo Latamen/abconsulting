@@ -16,6 +16,8 @@
 	<link rel="stylesheet" href="<?php base_url() ?>/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
 	<!-- Theme style -->
 	<link rel="stylesheet" href="<?php base_url() ?>/assets/css/adminlte.min.css">
+    <!-- JQUery UI -->
+    <link rel="stylesheet" href="<?php base_url() ?>/plugins/jquery-ui/jquery-ui.min.css">
 	<!-- Google Font: Source Sans Pro -->
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
@@ -63,6 +65,9 @@ to get the desired effect
                     </li>
                     <li class="nav-item">
                         <a href="<?= base_url('contrat/list') ?>" class="nav-link">Contrats</a>
+                    </li>
+                    <li>
+                        <a href="<?= base_url('absence/list') ?>" class="nav-link">Absences</a>
                     </li>
 				</ul>
 
