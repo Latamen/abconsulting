@@ -30,7 +30,7 @@ class ContratModel extends Model
         $db      = \Config\Database::connect();
         $builder = $db->table('contrat co');
 
-        return $builder->select('co.idContrat, cl.nom as nomClient')
+        return $builder->select('co.idContrat, cl.nom as nomClient, co.cible as cibleContrat')
             ->join('client cl', 'co.idClient = cl.idClient')
             ->where('co.idContrat', $id)
             ->get()->getResultObject()[0];

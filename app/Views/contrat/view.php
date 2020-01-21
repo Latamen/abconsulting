@@ -15,21 +15,27 @@
                                 <tr>
                                     <th>Pèriode</th>
                                     <th>Total HT</th>
+                                    <th>Cible</th>
                                     <th></th>
                                 </tr>
                                 </thead>
-                                <tbody>
-                                <?php foreach($resultats as $key => $resultat): ?>
-                                    <tr>
-                                        <td><?= (new DateTimeImmutable($key))->format('F Y') ?></td>
-                                        <td><?= number_format((float)$resultat['total'], 2, ',', ' '); ?> €</td>
-                                        <td>
-                                            <a class="nav-link ">
-                                                <i class="fas fa-file-pdf fa-lg"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                <?php endforeach; ?>
+                                <tbody> <?php
+                                if(!empty($resultats)) :
+                                    foreach($resultats as $key => $resultat): ?>
+                                        <tr class="<?= ($resultat['total'] > $contrat->cibleContrat/count($resultats) ? 'table-success' : 'table-danger') ?>">
+                                            <td><?= (new DateTimeImmutable($key))->format('F Y') ?></td>
+                                            <td><?= number_format((float)$resultat['total'], 2, ',', ' '); ?> €</td>
+                                            <td><?= number_format((float)$contrat->cibleContrat/count($resultats), 2, ',', ' '); ?> €</td>
+                                            <td>
+                                                <a class="nav-link ">
+                                                    <i class="fas fa-file-pdf fa-lg"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach;
+                                else: ?>
+                                    <td colspan="4">Aucune donnée disponible.</td>
+                                <?php endif; ?>
                                 </tfoot>
                             </table>
                         </div>
