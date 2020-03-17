@@ -31,10 +31,10 @@
                                         <tr>
                                             <td><?= $connaissance->idConnaissance ?></td>
                                             <td><?= $connaissance->libelle ?></td>
+                                            <td><?= $connaissance->nomProjet ?></td>
                                             <td><?= $connaissance->creationDate ?></td>
-                                            <td><?= $connaissance->Projet ?></td>
                                             <td>
-                                                <a class="nav-link href="<?= base_url('connaissance/edit/'.$connaissance->idConnaissance) ?>">
+                                                <a class="nav-link" href="<?= base_url('connaissance/edit/'.$connaissance->idConnaissance) ?>">
                                                     <i class="fas fa-edit"></i>
                                                 </a>
                                                 <a class="nav-link " onclick="return confirm('Voulez-vous supprimer cette connaissance ?')" style="color: red;" href="<?= base_url('connaissance/delete/'.$connaissance->idConnaissance) ?>">

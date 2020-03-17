@@ -11,7 +11,7 @@
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="<?= base_url('home') ?>">Accueil</a></li>
-                            <li class="breadcrumb-item active">ajouter connaissance</li>
+                            <li class="breadcrumb-item active">Ajouter connaissance</li>
                         </ol>
                     </div>
                 </div>
@@ -32,15 +32,15 @@
                     <div class="card-body">
                         <div class="form-group">
                             <label for="inputLibelle">Libellé</label>
-                            <input type="text" id="inputName" name="libelle" class="form-control" value="<?= $connaissance->libelle ?>">
+                            <input type="text" id="inputName" name="libelle" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="inputFirstName">Contenu</label>
-                            <input type="text" id="inputContenu" name="contenu" class="form-control" value="<?= $connaissance->contenu ?>">
+                            <input type="text" id="inputContenu" name="contenu" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="inputDocument">Document</label>
-                            <input type="text" id="inputTelephone" name="document" class="form-control" value="<?= $connaissance->document ?>">
+                            <input type="text" id="inputTelephone" name="document" class="form-control">
                         </div>
                         <div class="form-group text-center">
                             <input class="btn btn-primary" type="submit" name="valider" value="Valider">

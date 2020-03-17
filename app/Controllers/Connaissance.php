@@ -19,7 +19,7 @@ class Connaissance extends BaseController
         if ($this->request->getPost()) {
 
             // récupération des infos du formulaire
-            $connaissance['idConnaissance'] = $idConnaissance;
+            $connaissance['id'] = $idConnaissance;
             $connaissance['libelle'] = $this->request->getPost('libelle');
             $connaissance['contenu'] = $this->request->getPost('contenu');
             $connaissance['document'] = $this->request->getPost('document');
@@ -37,9 +37,31 @@ class Connaissance extends BaseController
         echo view('user/footer');
     }
 
-    public function add($data)
+    public function add()
     {
+        $data['title'] = 'Consultants';
 
+        // récupération du modèle Consultant
+        $connaissanceModel = new ConnaissanceModel();
+
+        // si on a validé le formulaire d'édition d'un Consultant
+        if ($this->request->getPost()) {
+
+            // récupération des infos du formulaire
+            $connaissance['libelle'] = $this->request->getPost('libelle');
+            $connaissance['contenu'] = $this->request->getPost('contenu');
+            $connaissance['document'] = $this->request->getPost('document');
+
+            // méthode create du modele connaissance
+            $connaissanceModel->add($connaissance);
+
+            // redirection vers la liste des connaissance
+            return redirect('connaissance/list');
+        }
+
+        echo view('user/header', $data);
+        echo view('connaissance/add', $data);
+        echo view('user/footer');
     }
 
     public function list()
@@ -51,5 +73,14 @@ class Connaissance extends BaseController
         echo view('user/header', $data);
         echo view('connaissance/list', $data);
         echo view('user/footer');
+    }
+
+    public function delete($id)
+    {
+        // récupération du modèle Client
+        $connaissanceModel = new ConnaissanceModel();
+
+        $connaissanceModel->disable($id);
+        return redirect('connaissance/list');
     }
 }

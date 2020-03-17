@@ -18,12 +18,22 @@ class ConnaissanceModel
         return $builder->insert($connaissance);
     }
 
+    public function getConnaissances() {
+        $db      = \Config\Database::connect();
+        $builder = $db->table('connaissance c');
+
+        return $builder->select('*, p.nom as nomProjet')
+            ->join('projet p', 'c.idProjet = p.idProjet')
+            ->where('c.isActive', 1)
+            ->get()->getResultObject();
+    }
+
     public function edit($connaissance) {
         $db      = \Config\Database::connect();
         $builder = $db->table('connaissance c');
 
-        return $builder->set('prenom', $connaissance['libelle'])
-            ->set('nom', $connaissance['contenu'])
+        return $builder->set('libelle', $connaissance['libelle'])
+            ->set('contenu', $connaissance['contenu'])
             ->set('document', $connaissance['document'])
             ->where('c.idConnaissance', $connaissance['id'])
             ->update();
@@ -34,10 +44,20 @@ class ConnaissanceModel
         $db      = \Config\Database::connect();
         $builder = $db->table('connaissance c');
 
-        return $builder->select('*')
+        return $builder->select('c.*, p.nom as nomProjet, tc.libelleTypeConnaissance as typeConnaissance')
             ->join('type_connaissance tc', 'c.idTypeConnaissance = tc.idTypeConnaissance')
             ->join('projet p', 'c.idProjet = p.idProjet')
             ->where('c.idConnaissance', $id)
             ->get()->getResultObject()[0];
+    }
+
+    public function disable($id)
+    {
+        $db      = \Config\Database::connect();
+        $builder = $db->table('connaissance');
+
+        return $builder->set('isActive', 0)
+            ->where('idConnaissance', $id)
+            ->update();
     }
 }
