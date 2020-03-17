@@ -69,6 +69,9 @@ to get the desired effect
                     <li>
                         <a href="<?= base_url('absence/list') ?>" class="nav-link">Absences</a>
                     </li>
+					<li class="nav-item">
+                        <a href="<?= base_url('connaissance/list') ?>" class="nav-link">Connaissance</a>
+                    </li>
 				</ul>
 
 				<!-- SEARCH FORM -->
