@@ -7,7 +7,8 @@ use App\Models\ConnaissanceModel;
 
 class Connaissance extends BaseController
 {
-    public function edit($idConnaissance) {
+    public function edit($idConnaissance)
+    {
         $data['title'] = 'Connaissances';
 
         // récupération du modèle Consultant
@@ -36,7 +37,19 @@ class Connaissance extends BaseController
         echo view('user/footer');
     }
 
-    public function add($data) {
+    public function add($data)
+    {
 
+    }
+
+    public function list()
+    {
+        $data['title'] = 'liste des connaissances';
+        $connaissanceModel = new ConnaissanceModel();
+        $data['connaissances'] = $connaissanceModel->getConnaissances();
+
+        echo view('user/header', $data);
+        echo view('connaissance/list', $data);
+        echo view('user/footer');
     }
 }
