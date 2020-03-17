@@ -1,5 +1,6 @@
 <?php namespace Config;
 
+use App\Filters\Auth;
 use CodeIgniter\Config\BaseConfig;
 
 class Filters extends BaseConfig
@@ -9,7 +10,7 @@ class Filters extends BaseConfig
 	public $aliases = [
 		'csrf'     => \CodeIgniter\Filters\CSRF::class,
 		'toolbar'  => \CodeIgniter\Filters\DebugToolbar::class,
-		'honeypot' => \CodeIgniter\Filters\Honeypot::class,
+		'honeypot' => \CodeIgniter\Filters\Honeypot::class
 	];
 
 	// Always applied before every request

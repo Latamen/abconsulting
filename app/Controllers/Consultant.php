@@ -12,6 +12,15 @@ use App\Models\ConsultantModel;
 
 class Consultant extends BaseController
 {
+    public function __construct()
+    {
+        $session = session();
+
+        if(!$session->get('user')) {
+            redirect('login');
+        }
+    }
+
     /**
      * Liste l'ensemble des existant existants
      */

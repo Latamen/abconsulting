@@ -72,6 +72,7 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
+
 $routes->add('/', 'Home::index');
 
 /** Routes authentification */
@@ -82,10 +83,13 @@ $routes->add('login', 'User::login');
 
 /** Routes consultant */
 
-$routes->add('consultant/list', 'Consultant::list');
-$routes->add('consultant/add', 'Consultant::add');
-$routes->add('consultant/edit/(:num)', 'Consultant::edit/$1');
-$routes->add('consultant/delete/(:num)', 'Consultant::delete/$1');
+$routes->group('consultant', function($routes){
+
+    $routes->add('list', 'Consultant::list');
+    $routes->add('add', 'Consultant::add');
+    $routes->add('edit/(:num)', 'Consultant::edit/$1');
+    $routes->add('delete/(:num)', 'Consultant::delete/$1');
+});
 
 
 /** Routes projets */

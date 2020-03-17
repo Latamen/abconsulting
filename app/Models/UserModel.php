@@ -12,6 +12,10 @@ use CodeIgniter\Model;
 
 class UserModel extends Model
 {
+    public const roles = [
+        ''
+    ];
+
     protected function hashPassword(string $password)
     {
         if (! isset($password))
@@ -41,6 +45,10 @@ class UserModel extends Model
         else{
             return FALSE;
         }
+    }
+
+    public function setRole() {
+
     }
     
     public function login($mail, $password)

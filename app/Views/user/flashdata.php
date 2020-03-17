@@ -1,4 +1,4 @@
-<?php if($flashMessages['errors']) : ?>
+<?php if(array_key_exists('errors', $flashMessages)) : ?>
     <div class="alert alert-danger" role="alert">
         <ul>
             <?php foreach ($flashMessages['errors'] as $error) : ?>
@@ -8,7 +8,7 @@
     </div>
 <?php endif ?>
 
-<?php if($flashMessages['success']) : ?>
+<?php if(array_key_exists('success', $flashMessages)) : ?>
     <div class="alert alert-success" role="alert">
         <ul>
             <li><?= $flashMessages['success'] ?></li>
