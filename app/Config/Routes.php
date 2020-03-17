@@ -106,6 +106,16 @@ $routes->add('client/edit/(:num)', 'Client::edit/$1');
 $routes->add('client/delete/(:num)', 'Client::delete/$1');
 $routes->add('client/add', 'Client::add');
 
+/* Routes Connaissance */
+
+$routes->group('connaissance', function($routes){
+
+    $routes->add('list', 'Connaissance::list');
+    $routes->add('add', 'Connaissance::add');
+    $routes->add('edit/(:num)', 'Connaissance::edit/$1');
+    $routes->add('delete/(:num)', 'Connaissance::delete/$1');
+});
+
 /** Routes contrats */
 $routes->add('contrat/list', 'Contrat::list');
 $routes->add('contrat/view/(:num)', 'Contrat::view/$1');
